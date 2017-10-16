@@ -32,7 +32,8 @@ The application is accepted if:
 
 ###  What is inheritance? When would you use it? [2p]
 #### Your answer:
-[add your answer here]
+The child class can inherit from the parent class. It means, that the child class can be able to use properties and methods, which use the parent class. 
+We use it, when we have a class which have more common parameters and properties with other special instance, but for the special instances has some special properties too. It will be transparent with inheritance and we can avoid the code duplication.
 
 
 ### Name each building block of a method! [2p]
@@ -41,10 +42,10 @@ The application is accepted if:
 
 #### Your answer:
 [add your answer here]   
-1:   
-2:   
-3:   
-4:   
-5:   
-6:   
-7:
+1:   sign of the function
+2:   function name
+3:   parameter list
+4:   function body, indented to the function
+5:   variable name
+6:   return is the flow of control to the calling function
+7:   return statement with result: with the calling of function  the function returns
