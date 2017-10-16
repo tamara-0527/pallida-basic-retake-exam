@@ -9,11 +9,13 @@
 # Well done, that was not that hard
 
 def reverse_words(sentence):
-    sentence = sentence.split(" ")
+    sentence = list(sentence.split(" "))
+    result_sentence = []
     for string in sentence:
-        reversed(string)
-        result_sentence = ' '.join(string)
+        reversed_string = string[::-1]
+        result_sentence.append(reversed_string)
     return result_sentence
+    
 
 
 reversedWords = reverse_words("lleW ,enod taht saw ton taht drah")
