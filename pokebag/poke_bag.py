@@ -19,3 +19,63 @@
 # 
 # stongestPokemon = pokeBag.getStrongest();
 # Should return the pokemon with the highest strength value
+
+from random import randint
+
+class PokeBag(object):
+    def __init__(self):
+        pass
+    def add(self):
+        pass
+
+    def get(self):
+        pass
+    
+    def get_strongest(self):
+        pass
+
+class Pokemons(object):
+    
+    def __init__(self, healthpoint):
+        self.healthpoint = 0
+        self.strenght = randint(1,10)
+        
+
+class Pikachu(Pokemons):
+    
+    def __init__(self):
+        super(Pikachu, self).__init__()
+        self.healthpoint = 12
+    
+    def speak(self):
+        return "Pika pika"
+
+
+class Bulbasaur(Pokemons):
+    
+    def __init__(self):
+        super(Bulbasaur, self).__init__()
+        self.healthpoint = 10
+
+    def speak(self):
+        return "Bulba-saur"
+
+
+class Charmander(Pokemons):
+    
+    def __init__(self):
+        super(Charmander, self).__init__()
+        self.healthpoint = 10
+
+    def speak(self):
+        return "Char-char"
+
+pokeBag.add(Pikachu());
+pokeBag.add(Pikachu());
+pokeBag.add(Pikachu());
+pokeBag.add(Bulbasaur());
+pokeBag.add(Charmander());
+ 
+# print(pokeBag.get(0).speak());
+# Should return the pokemon with the highest strength value
+
