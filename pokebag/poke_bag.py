@@ -23,30 +23,44 @@
 from random import randint
 
 class PokeBag(object):
+    
     def __init__(self):
-        pass
-    def add(self):
-        pass
+        self.store = []
+        self.pokemons = Pokemons()
 
+    def add(self, pokemons):
+        self.store.append(pokemons)
+        
     def get(self):
         pass
     
-    def get_strongest(self):
-        pass
+    def get_strongest(self, strength):
+        strongest = self.store[0]
+        for item in self.store[1:]:
+            if item.strength > self.pokemons.strength:
+                strongest = item
+        return self.pokemons.to_string()
+    
+    def __str__(self):
+        for pokemon in self.store:
+            return self.get_strongest(self.pokemons.strength)
 
 class Pokemons(object):
     
-    def __init__(self, healthpoint):
+    def __init__(self):
         self.healthpoint = 0
-        self.strenght = randint(1,10)
-        
+        self.strength = randint(1,10)
+        self.pokemon_type = "Pokemons"
+    
+    def to_string(self):
+        return "{} : {} ".format(self.pokemon_type, self.strength)
 
 class Pikachu(Pokemons):
     
     def __init__(self):
-        super(Pikachu, self).__init__()
+        super().__init__()
         self.healthpoint = 12
-    
+        self.pokemon_type = "Pikachu"
     def speak(self):
         return "Pika pika"
 
@@ -54,8 +68,9 @@ class Pikachu(Pokemons):
 class Bulbasaur(Pokemons):
     
     def __init__(self):
-        super(Bulbasaur, self).__init__()
+        super().__init__()        
         self.healthpoint = 10
+        self.pokemon_type = "Bulbasaur"
 
     def speak(self):
         return "Bulba-saur"
@@ -64,18 +79,21 @@ class Bulbasaur(Pokemons):
 class Charmander(Pokemons):
     
     def __init__(self):
-        super(Charmander, self).__init__()
+        super().__init__()        
         self.healthpoint = 10
-
+        self.pokemon_type = "Bulbasaur"
+        
     def speak(self):
         return "Char-char"
 
+
+pokeBag = PokeBag()
 pokeBag.add(Pikachu());
 pokeBag.add(Pikachu());
 pokeBag.add(Pikachu());
 pokeBag.add(Bulbasaur());
 pokeBag.add(Charmander());
- 
+print(pokeBag)
 # print(pokeBag.get(0).speak());
 # Should return the pokemon with the highest strength value
 
