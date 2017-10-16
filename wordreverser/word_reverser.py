@@ -7,3 +7,14 @@
 #
 # Should print:
 # Well done, that was not that hard
+
+def reverse_words(sentence):
+    sentence = sentence.split(" ")
+    for string in sentence:
+        reversed(string)
+        result_sentence = ' '.join(string)
+    return result_sentence
+
+
+reversedWords = reverse_words("lleW ,enod taht saw ton taht drah")
+print(reversedWords)
