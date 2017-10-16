@@ -22,28 +22,29 @@
 
 from random import randint
 
+
 class PokeBag(object):
     
     def __init__(self):
         self.store = []
-        self.pokemons = Pokemons()
+        self.pokemon = Pokemons()
 
-    def add(self, pokemons):
-        self.store.append(pokemons)
+    def add(self, pokemon):
+        self.store.append(pokemon)
         
     def get(self):
         pass
     
-    def get_strongest(self, strength):
+    def get_strongest(self, pokemon_type, strength):
         strongest = self.store[0]
         for item in self.store[1:]:
-            if item.strength > self.pokemons.strength:
+            if item.strength > self.pokemon.strength:
                 strongest = item
-        return self.pokemons.to_string()
+        return self.pokemon.to_string()
     
     def __str__(self):
-        for pokemon in self.store:
-            return self.get_strongest(self.pokemons.strength)
+        return self.get_strongest(self.pokemon.pokemon_type, self.pokemon.strength)
+
 
 class Pokemons(object):
     
@@ -54,6 +55,7 @@ class Pokemons(object):
     
     def to_string(self):
         return "{} : {} ".format(self.pokemon_type, self.strength)
+
 
 class Pikachu(Pokemons):
     
