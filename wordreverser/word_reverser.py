@@ -8,14 +8,10 @@
 # Should print:
 # Well done, that was not that hard
 
+
 def reverse_words(sentence):
-    sentence = list(sentence.split(" "))
-    result_sentence = []
-    for string in sentence:
-        reversed_string = string[::-1]
-        result_sentence.append(reversed_string)
-    return result_sentence
-    
+
+    return ' '.join(word[::-1] for word in sentence.split())
 
 
 reversedWords = reverse_words("lleW ,enod taht saw ton taht drah")
